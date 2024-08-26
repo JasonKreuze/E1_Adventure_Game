@@ -1,0 +1,14 @@
+C:\Users\Jason - Curio\source\repos\E1_Adventure_Game\E1_Adventure_Game\bin\Debug\net6.0\E1_Adventure_Game.exe
+C:\Users\Jason - Curio\source\repos\E1_Adventure_Game\E1_Adventure_Game\bin\Debug\net6.0\E1_Adventure_Game.deps.json
+C:\Users\Jason - Curio\source\repos\E1_Adventure_Game\E1_Adventure_Game\bin\Debug\net6.0\E1_Adventure_Game.runtimeconfig.json
+C:\Users\Jason - Curio\source\repos\E1_Adventure_Game\E1_Adventure_Game\bin\Debug\net6.0\E1_Adventure_Game.dll
+C:\Users\Jason - Curio\source\repos\E1_Adventure_Game\E1_Adventure_Game\bin\Debug\net6.0\E1_Adventure_Game.pdb
+C:\Users\Jason - Curio\source\repos\E1_Adventure_Game\E1_Adventure_Game\obj\Debug\net6.0\E1_Adventure_Game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jason - Curio\source\repos\E1_Adventure_Game\E1_Adventure_Game\obj\Debug\net6.0\E1_Adventure_Game.AssemblyInfoInputs.cache
+C:\Users\Jason - Curio\source\repos\E1_Adventure_Game\E1_Adventure_Game\obj\Debug\net6.0\E1_Adventure_Game.AssemblyInfo.cs
+C:\Users\Jason - Curio\source\repos\E1_Adventure_Game\E1_Adventure_Game\obj\Debug\net6.0\E1_Adventure_Game.csproj.CoreCompileInputs.cache
+C:\Users\Jason - Curio\source\repos\E1_Adventure_Game\E1_Adventure_Game\obj\Debug\net6.0\E1_Adventure_Game.dll
+C:\Users\Jason - Curio\source\repos\E1_Adventure_Game\E1_Adventure_Game\obj\Debug\net6.0\refint\E1_Adventure_Game.dll
+C:\Users\Jason - Curio\source\repos\E1_Adventure_Game\E1_Adventure_Game\obj\Debug\net6.0\E1_Adventure_Game.pdb
+C:\Users\Jason - Curio\source\repos\E1_Adventure_Game\E1_Adventure_Game\obj\Debug\net6.0\E1_Adventure_Game.genruntimeconfig.cache
+C:\Users\Jason - Curio\source\repos\E1_Adventure_Game\E1_Adventure_Game\obj\Debug\net6.0\ref\E1_Adventure_Game.dll
