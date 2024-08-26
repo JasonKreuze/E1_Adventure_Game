@@ -2,54 +2,23 @@
 
 ## Naming Conventions
 
-- Use meaningful and descriptive names for variables, functions, and classes.
-- Use camel case for variable and function names (e.g., `myVariable`, `myFunction`).
-- Use Pascal case for class names (e.g., `MyClass`).
+- Schrijf alle variabelen, funties, klasses, etc. in het engels.
+- Gebruik begrijpbare en beschrijvende namen voor variabelen, functies, klassen, etc.
+- Maak gebruik van camelCase voor variabelen en functies (Bijv. `greatVariable`, `goodFunction`).
+- Gebruik Pascal Case voor de namen van klassen (bijv. `NewClass`).
 
 ## Formatting Conventions
 
-- Use consistent indentation (e.g., 4 spaces or tabs).
-- Use a consistent line length limit (e.g., 80 characters).
-- Use proper spacing around operators and parentheses for readability.
+- Gebruik een cosistente identatie van 4 spaties.
+
 
 ## Commenting Conventions
 
-- Use comments to explain complex or non-obvious code.
-- Write clear and concise comments that add value to the code.
-- Avoid excessive or unnecessary comments.
+- Zorg dat je alles van commentaar voorziet.
+- Zorg dat al het commentaar goed beschrijft wat de functies, etc doet.
+- Schrijf geen onnodig commentaar (voor variabelen bijvoorbeeld)
+- Schrifj al het commentaar in engels.
 
-## Error Handling Conventions
+## Guard statements
 
-- Use appropriate error handling mechanisms (e.g., try-catch blocks).
-- Handle errors gracefully and provide meaningful error messages.
-- Avoid using generic catch-all error handlers.
-
-## Documentation Conventions
-
-- Include a README file that provides an overview of the project.
-- Document the purpose and usage of each module, function, and class.
-- Use a consistent and clear documentation style.
-
-## Version Control Conventions
-
-- Use a version control system (e.g., Git) to track changes.
-- Commit frequently and provide meaningful commit messages.
-- Use branches for new features or bug fixes.
-
-## Testing Conventions
-
-- Write unit tests for critical functionality.
-- Test edge cases and handle them appropriately.
-- Automate the testing process if possible.
-
-## Performance Conventions
-
-- Optimize code for readability and maintainability first.
-- Use appropriate data structures and algorithms for efficiency.
-- Profile and measure performance to identify bottlenecks.
-
-## Security Conventions
-
-- Follow secure coding practices to prevent vulnerabilities.
-- Sanitize user input to prevent injection attacks.
-- Protect sensitive data and use encryption where necessary.
+- Gebruik Guard statements zodat alle input gecontrolleerd wordt, zodra er dan een verkeerde input gegeven is kan dit direct vermeld worden.
