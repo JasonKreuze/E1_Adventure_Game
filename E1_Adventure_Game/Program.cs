@@ -7,24 +7,24 @@ namespace AdventureGame
     {
         private static void Main(string[] args)
         {
+            Game game = new Game();
             Console.WriteLine("\r\n██████╗░░█████╗░░█████╗░██╗░░██╗██████╗░░█████╗░░█████╗░███╗░░░███╗░██████╗\r\n██╔══██╗██╔══██╗██╔══██╗██║░██╔╝██╔══██╗██╔══██╗██╔══██╗████╗░████║██╔════╝\r\n██████╦╝███████║██║░░╚═╝█████═╝░██████╔╝██║░░██║██║░░██║██╔████╔██║╚█████╗░\r\n██╔══██╗██╔══██║██║░░██╗██╔═██╗░██╔══██╗██║░░██║██║░░██║██║╚██╔╝██║░╚═══██╗\r\n██████╦╝██║░░██║╚█████╔╝██║░╚██╗██║░░██║╚█████╔╝╚█████╔╝██║░╚═╝░██║██████╔╝\r\n╚═════╝░╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░░╚════╝░╚═╝░░░░░╚═╝╚═════╝░\r\n\r\n░█████╗░██████╗░██╗░░░██╗███████╗███╗░░██╗████████╗██╗░░░██╗██████╗░███████╗\r\n██╔══██╗██╔══██╗██║░░░██║██╔════╝████╗░██║╚══██╔══╝██║░░░██║██╔══██╗██╔════╝\r\n███████║██║░░██║╚██╗░██╔╝█████╗░░██╔██╗██║░░░██║░░░██║░░░██║██████╔╝█████╗░░\r\n██╔══██║██║░░██║░╚████╔╝░██╔══╝░░██║╚████║░░░██║░░░██║░░░██║██╔══██╗██╔══╝░░\r\n██║░░██║██████╔╝░░╚██╔╝░░███████╗██║░╚███║░░░██║░░░╚██████╔╝██║░░██║███████╗\r\n╚═╝░░╚═╝╚═════╝░░░░╚═╝░░░╚══════╝╚═╝░░╚══╝░░░╚═╝░░░░╚═════╝░╚═╝░░╚═╝╚══════╝");
             Console.WriteLine("");
             if(Helpers.gameStart())
             {
                 Console.Clear();
-                SceneLoader.Scene scene1 = SceneLoader.LoadScenes("1");
-                string playerName = Helpers.ask("Voer een naam in: ");
-                Console.WriteLine($"Scene: {scene1.SceneText}");
-                Console.WriteLine($"Hint: {scene1.Hint}");
-                foreach (string choice in scene1.Choices)
+                SceneLoader.DisplayScene("1", game);
+                game.IsRunning = true;
+                int i = 1;
+                while (game.IsRunning)
                 {
-                    Console.WriteLine(choice);
+                    i++;
+                    string path = Helpers.choosePath();
+                    string newScene = i.ToString() + path;
+                    Console.Clear();
+                    SceneLoader.DisplayScene(newScene, game);
+
                 }
-                Console.WriteLine();
-                Helpers.ask("Druk op enter om door te gaan...");
-                Console.Clear();
-                Helpers.gameFinish();
-                
             }
         }
     }

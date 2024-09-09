@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace E1_Adventure_Game
+{
+    internal class Game
+    {
+        public bool IsRunning = false;
+
+    }
+}

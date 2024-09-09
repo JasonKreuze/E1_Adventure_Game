@@ -57,10 +57,41 @@ namespace E1_Adventure_Game
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error loading scenes: {ex.Message}");
+                Helpers.gameFinish();
                 return null;
+                //Console.WriteLine($"Error loading scenes: {ex.Message}");
             }
             return null;
+        }
+        
+        public static void DisplayScene(string Scene, Game game)
+        {
+            SceneLoader.Scene scene = LoadScenes(Scene);
+            if (scene == null)
+            {
+                game.IsRunning = false;
+                return;
+            }
+            int i = 1;
+            Console.Clear();
+
+            Console.WriteLine($"{scene.SceneText}");
+            if (scene.Hint != "NVT")
+            {
+                Console.WriteLine($"Hint: {scene.Hint}");
+            } 
+            Console.WriteLine();
+            foreach (string choice in scene.Choices)
+            {
+                if (choice == "NVT")
+                {
+                    return;
+                }
+
+                Console.WriteLine(i + ". " + choice);
+                i++;
+            }
+            Console.WriteLine();
         }
     }
 }
