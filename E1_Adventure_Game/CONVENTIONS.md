@@ -4,8 +4,8 @@
 
 - Schrijf alle variabelen, funties, klasses, etc. in het engels.
 - Gebruik begrijpbare en beschrijvende namen voor variabelen, functies, klassen, etc.
-- Maak gebruik van camelCase voor variabelen en functies (Bijv. `greatVariable`, `goodFunction`).
-- Gebruik Pascal Case voor de namen van klassen (bijv. `NewClass`).
+- Maak gebruik van camelCase voor variabelen  (Bijv. `greatVariable`).
+- Gebruik Pascal Case voor de namen van klassen en functies (bijv. `NewClass`, `goodFunction`).
 
 ## Formatting Conventions
 
@@ -17,7 +17,7 @@
 - Zorg dat je alles van commentaar voorziet.
 - Zorg dat al het commentaar goed beschrijft wat de functies, etc doet.
 - Schrijf geen onnodig commentaar (voor variabelen bijvoorbeeld)
-- Schrifj al het commentaar in engels.
+- Schrijf al het commentaar in engels.
 
 ## Guard statements
 

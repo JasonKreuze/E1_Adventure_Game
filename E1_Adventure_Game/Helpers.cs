@@ -55,9 +55,9 @@ namespace E1_Adventure_Game
             Console.WriteLine("\r\n░██████╗░░█████╗░███╗░░░███╗███████╗  ███████╗██╗███╗░░██╗██╗░██████╗██╗░░██╗███████╗██████╗░\r\n██╔════╝░██╔══██╗████╗░████║██╔════╝  ██╔════╝██║████╗░██║██║██╔════╝██║░░██║██╔════╝██╔══██╗\r\n██║░░██╗░███████║██╔████╔██║█████╗░░  █████╗░░██║██╔██╗██║██║╚█████╗░███████║█████╗░░██║░░██║\r\n██║░░╚██╗██╔══██║██║╚██╔╝██║██╔══╝░░  ██╔══╝░░██║██║╚████║██║░╚═══██╗██╔══██║██╔══╝░░██║░░██║\r\n╚██████╔╝██║░░██║██║░╚═╝░██║███████╗  ██║░░░░░██║██║░╚███║██║██████╔╝██║░░██║███████╗██████╔╝\r\n░╚═════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝╚══════╝  ╚═╝░░░░░╚═╝╚═╝░░╚══╝╚═╝╚═════╝░╚═╝░░╚═╝╚══════╝╚═════╝░");
         }
 
-        static public string choosePath()
+        static public string ChoosePath()
         {
-            string userChoice = Helpers.ask("Maak een keuze om door te gaan: ");
+            string userChoice = Helpers.ask("Of druk 'x'Maak een keuze om door te gaan: ");
             switch (userChoice)
             {
                 case "1":
@@ -66,9 +66,13 @@ namespace E1_Adventure_Game
                     return "B";
                 case "3":
                     return "C";
+                case "x":
+                    //game.IsRunning = false;
+                    gameFinish();
+                    return "";
                 default:
                     Console.WriteLine("Geen geldige keuze!");
-                    return choosePath();
+                    return "";
             }
         }
     }
