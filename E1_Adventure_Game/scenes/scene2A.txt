@@ -1,0 +1,8 @@
+﻿De opslag zit achter een koelcel.
+Je zegt sorry en gaat het klusje uitvoeren, voor het klusje moet je iets schoonmaken,
+alleen alle doekjes zijn op, je zal nieuwe moeten pakken. Je zal de opslagruimte moeten
+zoeken.
+Je kijkt in de ruimte achter de bulk (Fris, sappen en bier) vracht
+Je kijkt in de ruimte achter de slagerij koelcel.
+Je kijkt in de ruimte achter de AGF koelcel
+End: no

@@ -1,4 +1,5 @@
 ﻿using E1_Adventure_Game;
+using static E1_Adventure_Game.SceneLoader;
 
 namespace AdventureGame
 {
@@ -6,19 +7,30 @@ namespace AdventureGame
     {
         private static void Main(string[] args)
         {
+            Game game = new Game();
             Console.WriteLine("\r\n██████╗░░█████╗░░█████╗░██╗░░██╗██████╗░░█████╗░░█████╗░███╗░░░███╗░██████╗\r\n██╔══██╗██╔══██╗██╔══██╗██║░██╔╝██╔══██╗██╔══██╗██╔══██╗████╗░████║██╔════╝\r\n██████╦╝███████║██║░░╚═╝█████═╝░██████╔╝██║░░██║██║░░██║██╔████╔██║╚█████╗░\r\n██╔══██╗██╔══██║██║░░██╗██╔═██╗░██╔══██╗██║░░██║██║░░██║██║╚██╔╝██║░╚═══██╗\r\n██████╦╝██║░░██║╚█████╔╝██║░╚██╗██║░░██║╚█████╔╝╚█████╔╝██║░╚═╝░██║██████╔╝\r\n╚═════╝░╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░░╚════╝░╚═╝░░░░░╚═╝╚═════╝░\r\n\r\n░█████╗░██████╗░██╗░░░██╗███████╗███╗░░██╗████████╗██╗░░░██╗██████╗░███████╗\r\n██╔══██╗██╔══██╗██║░░░██║██╔════╝████╗░██║╚══██╔══╝██║░░░██║██╔══██╗██╔════╝\r\n███████║██║░░██║╚██╗░██╔╝█████╗░░██╔██╗██║░░░██║░░░██║░░░██║██████╔╝█████╗░░\r\n██╔══██║██║░░██║░╚████╔╝░██╔══╝░░██║╚████║░░░██║░░░██║░░░██║██╔══██╗██╔══╝░░\r\n██║░░██║██████╔╝░░╚██╔╝░░███████╗██║░╚███║░░░██║░░░╚██████╔╝██║░░██║███████╗\r\n╚═╝░░╚═╝╚═════╝░░░░╚═╝░░░╚══════╝╚═╝░░╚══╝░░░╚═╝░░░░╚═════╝░╚═╝░░╚═╝╚══════╝");
             Console.WriteLine("");
-            if(Helpers.GameStart())
+            if(Helpers.gameStart())
             {
                 Console.Clear();
-                string playerName = Helpers.Ask("Voer een naam in: ");
-                Console.WriteLine("Context: Je was hopeloos aan het zoeken naar een baan en hebt gesolliciteerd bij een Jumbo en je bent aangenomen.");
-                Console.WriteLine("Het is tijd voor je eerste dag maar je ziet dat je je verslapen hebt en er over 5 minuten al moet zijn!");
-                Console.WriteLine("Je haast jezelf nog om op tijd te zijn en je haalt het nog net...");
-                Console.WriteLine("");
-                Helpers.Ask("Druk op enter om door te gaan...");
-                Console.Clear();
-                
+                SceneLoader.DisplayScene("1", game);
+                game.IsRunning = true;
+                int i = 1;
+                while (game.IsRunning)
+                {
+                    i++;
+                    string path;
+                    string newScene = "";
+                    if (game.IsRunning == true)
+                    {
+                        path = Helpers.ChoosePath();
+                        newScene = i.ToString() + path;
+                    }
+                    
+                    Console.Clear();
+                    SceneLoader.DisplayScene(newScene, game);
+
+                }
             }
         }
     }
