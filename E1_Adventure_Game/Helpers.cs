@@ -57,7 +57,7 @@ namespace E1_Adventure_Game
             Console.WriteLine("\r\n░██████╗░░█████╗░███╗░░░███╗███████╗  ███████╗██╗███╗░░██╗██╗░██████╗██╗░░██╗███████╗██████╗░\r\n██╔════╝░██╔══██╗████╗░████║██╔════╝  ██╔════╝██║████╗░██║██║██╔════╝██║░░██║██╔════╝██╔══██╗\r\n██║░░██╗░███████║██╔████╔██║█████╗░░  █████╗░░██║██╔██╗██║██║╚█████╗░███████║█████╗░░██║░░██║\r\n██║░░╚██╗██╔══██║██║╚██╔╝██║██╔══╝░░  ██╔══╝░░██║██║╚████║██║░╚═══██╗██╔══██║██╔══╝░░██║░░██║\r\n╚██████╔╝██║░░██║██║░╚═╝░██║███████╗  ██║░░░░░██║██║░╚███║██║██████╔╝██║░░██║███████╗██████╔╝\r\n░╚═════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝╚══════╝  ╚═╝░░░░░╚═╝╚═╝░░╚══╝╚═╝╚═════╝░╚═╝░░╚═╝╚══════╝╚═════╝░");
         }
 
-        static public string ChoosePath()
+        static public string ChoosePath(string hint)
         {
             string userChoice = Helpers.Ask("Of druk 'x' om te stoppen. Maak een keuze om door te gaan: ");
             switch (userChoice)
@@ -68,11 +68,14 @@ namespace E1_Adventure_Game
                     return "B";
                 case "3":
                     return "C";
+                case "4":
+                    Console.WriteLine($"Je hint: {hint}\n");
+                    return ChoosePath(hint);
                 case "x":
                     return "";
                 default:
                     Console.WriteLine("Geen geldige keuze!");
-                    return ChoosePath();
+                    return ChoosePath(hint);
             }
         }
 

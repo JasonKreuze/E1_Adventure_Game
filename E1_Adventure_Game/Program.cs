@@ -18,16 +18,16 @@ namespace AdventureGame
                 string newOrSave = Helpers.LoadSaveFile();
                 if (newOrSave == "1")
                 {
-                    Console.WriteLine("Boo");
                     SceneLoader.DisplayScene(newOrSave, game);
                 } else
                 {
-                    Console.WriteLine("Booooo");
                     SceneLoader.DisplayScene(newOrSave, game);
                 }
                 game.IsRunning = true;
-                int i = 1;
+                int i = int.Parse(newOrSave[0].ToString());
+                Console.WriteLine(i);
                 string currentScene = newOrSave;
+                string sceneHint = "";
                 while (game.IsRunning)
                 {
                     i++;
@@ -35,7 +35,7 @@ namespace AdventureGame
                     string newScene = "";
                     if (game.IsRunning == true)
                     {
-                        path = Helpers.ChoosePath();
+                        path = Helpers.ChoosePath(sceneHint);
                         if (path == "")
                         {
                             File.WriteAllText("../../../savegame.txt", currentScene.ToString());
@@ -44,7 +44,7 @@ namespace AdventureGame
                     }
                     currentScene = newScene;
                     Console.Clear();
-                    SceneLoader.DisplayScene(newScene, game);
+                    sceneHint = SceneLoader.DisplayScene(newScene, game);
 
                 }
             }

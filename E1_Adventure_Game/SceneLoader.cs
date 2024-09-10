@@ -67,16 +67,15 @@ namespace E1_Adventure_Game
                 return null;
                 //Console.WriteLine($"Error loading scenes: {ex.Message}");
             }
-            return null;
         }
 
-        public static void DisplayScene(string Scene, Game game)
+        public static string DisplayScene(string Scene, Game game)
         {
             SceneLoader.Scene scene = LoadScenes(Scene);
             if (scene == null)
             {
                 game.IsRunning = false;
-                return;
+                return "";
             }
             Console.WriteLine(scene.IsEnd);
             if (scene.IsEnd == true)
@@ -88,22 +87,25 @@ namespace E1_Adventure_Game
             Console.Clear();
 
             Console.WriteLine($"{scene.SceneText}");
-            if (scene.Hint != "NVT")
-            {
-                Console.WriteLine($"Hint: {scene.Hint}");
-            }
             Console.WriteLine();
             foreach (string choice in scene.Choices)
             {
                 if (choice == "NVT")
                 {
-                    return;
+                    return "";
                 }
 
                 Console.WriteLine(i + ". " + choice);
                 i++;
             }
             Console.WriteLine();
+            if (scene.Hint != "NVT")
+            {
+                return scene.Hint;
+            } else
+            {
+                return "Geen hint beschikbaar";
+            }
         }
     }
 }
