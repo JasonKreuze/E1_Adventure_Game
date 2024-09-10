@@ -9,7 +9,7 @@ namespace E1_Adventure_Game
     static public class Helpers
     {
         // ask function to ask a question and get a response to reduce lines in the future
-        static public string ask(string question)
+        static public string Ask(string question)
         {
             Console.Write(question + " ");
             return Console.ReadLine().ToLower();
@@ -18,7 +18,7 @@ namespace E1_Adventure_Game
         // gameStart function to start the game, with the menu.
         static public bool gameStart()
         {
-            Console.WriteLine("Druk op '1' om de game te starten, '2' om de instructies te lezen, '3' om af te sluiten");
+            Console.WriteLine("Druk op '1' om de game te starten, '2' om te starten vanaf een savefile, '3' om de instructies te lezen, '4' om af te sluiten");
             string userChoice = Console.ReadLine().ToLower();
             switch (userChoice)
             {
@@ -26,6 +26,8 @@ namespace E1_Adventure_Game
                     return true;
 
                 case "2":
+                    return true;
+                case "3":
                     Console.Clear();
                     Console.WriteLine("\r\n██╗███╗░░██╗░██████╗████████╗██████╗░██╗░░░██╗░█████╗░████████╗██╗███████╗░██████╗\r\n██║████╗░██║██╔════╝╚══██╔══╝██╔══██╗██║░░░██║██╔══██╗╚══██╔══╝██║██╔════╝██╔════╝\r\n██║██╔██╗██║╚█████╗░░░░██║░░░██████╔╝██║░░░██║██║░░╚═╝░░░██║░░░██║█████╗░░╚█████╗░\r\n██║██║╚████║░╚═══██╗░░░██║░░░██╔══██╗██║░░░██║██║░░██╗░░░██║░░░██║██╔══╝░░░╚═══██╗\r\n██║██║░╚███║██████╔╝░░░██║░░░██║░░██║╚██████╔╝╚█████╔╝░░░██║░░░██║███████╗██████╔╝\r\n╚═╝╚═╝░░╚══╝╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝░╚═════╝░░╚════╝░░░░╚═╝░░░╚═╝╚══════╝╚═════╝░");
                     Console.WriteLine("");
@@ -37,7 +39,7 @@ namespace E1_Adventure_Game
                     Console.WriteLine("");
                     return gameStart();
 
-                case "3":
+                case "4":
                     return false;
 
                 default:
@@ -57,7 +59,7 @@ namespace E1_Adventure_Game
 
         static public string ChoosePath()
         {
-            string userChoice = Helpers.ask("Of druk 'x' om te stoppen. Maak een keuze om door te gaan: ");
+            string userChoice = Helpers.Ask("Of druk 'x' om te stoppen. Maak een keuze om door te gaan: ");
             switch (userChoice)
             {
                 case "1":
@@ -71,6 +73,36 @@ namespace E1_Adventure_Game
                 default:
                     Console.WriteLine("Geen geldige keuze!");
                     return ChoosePath();
+            }
+        }
+
+        static public string LoadSaveFile()
+        {
+            string newOrSave = Helpers.Ask("Wil je een save file laden of een nieuwe beginnen? Let op dat een nieuwe beginnen de oude save file zal overschrijven!\n1 voor save file, 2 voor nieuwe save file");
+            if (newOrSave == "1")
+            {
+                if (File.Exists("../../../savegame.txt"))
+                {
+                    if (!string.IsNullOrEmpty(File.ReadAllText("../../../savegame.txt")))
+                    {
+                        return File.ReadAllText("../../../savegame.txt");
+                    } else
+                    {
+                        return "1";
+                    }
+                } else
+                {
+                    return "1";
+                }
+            }
+            else if (newOrSave == "2")
+            {
+                return "1";
+            }
+            else
+            {
+                Console.WriteLine("Geen geldige input!");
+                return LoadSaveFile();
             }
         }
     }

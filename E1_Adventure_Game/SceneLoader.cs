@@ -75,7 +75,6 @@ namespace E1_Adventure_Game
             SceneLoader.Scene scene = LoadScenes(Scene);
             if (scene == null)
             {
-                Helpers.gameFinish();
                 game.IsRunning = false;
                 return;
             }
