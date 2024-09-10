@@ -69,7 +69,16 @@ namespace E1_Adventure_Game
                 case "3":
                     return "C";
                 case "4":
-                    Console.WriteLine($"Je hint: {hint}\n");
+                    if (hint == "")
+                    {
+                        Console.WriteLine("Er is momenteel geen hint beschikbaar!");
+                    } else if (hint == "Geen hint beschikbaar")
+                    {
+                        Console.WriteLine("Er is momenteel geen hint beschikbaar!");
+                    } else
+                    {
+                        Console.WriteLine($"Je hint: {hint}\n");
+                    }
                     return ChoosePath(hint);
                 case "x":
                     return "";
