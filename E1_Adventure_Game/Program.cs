@@ -25,7 +25,6 @@ namespace AdventureGame
                 }
                 game.IsRunning = true;
                 int i = int.Parse(newOrSave[0].ToString());
-                Console.WriteLine(i);
                 string currentScene = newOrSave;
                 string sceneHint = "";
                 while (game.IsRunning)

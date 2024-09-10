@@ -54,12 +54,12 @@ namespace E1_Adventure_Game
         // TODO: Implement ending.
         static public void gameFinish()
         {
-            Console.WriteLine("\r\n░██████╗░░█████╗░███╗░░░███╗███████╗  ███████╗██╗███╗░░██╗██╗░██████╗██╗░░██╗███████╗██████╗░\r\n██╔════╝░██╔══██╗████╗░████║██╔════╝  ██╔════╝██║████╗░██║██║██╔════╝██║░░██║██╔════╝██╔══██╗\r\n██║░░██╗░███████║██╔████╔██║█████╗░░  █████╗░░██║██╔██╗██║██║╚█████╗░███████║█████╗░░██║░░██║\r\n██║░░╚██╗██╔══██║██║╚██╔╝██║██╔══╝░░  ██╔══╝░░██║██║╚████║██║░╚═══██╗██╔══██║██╔══╝░░██║░░██║\r\n╚██████╔╝██║░░██║██║░╚═╝░██║███████╗  ██║░░░░░██║██║░╚███║██║██████╔╝██║░░██║███████╗██████╔╝\r\n░╚═════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝╚══════╝  ╚═╝░░░░░╚═╝╚═╝░░╚══╝╚═╝╚═════╝░╚═╝░░╚═╝╚══════╝╚═════╝░");
+            Console.WriteLine("\r\n░██████╗░░█████╗░███╗░░░███╗███████╗  ███████╗███╗░░██╗██████╗░███████╗██████╗░\r\n██╔════╝░██╔══██╗████╗░████║██╔════╝  ██╔════╝████╗░██║██╔══██╗██╔════╝██╔══██╗\r\n██║░░██╗░███████║██╔████╔██║█████╗░░  █████╗░░██╔██╗██║██║░░██║█████╗░░██║░░██║\r\n██║░░╚██╗██╔══██║██║╚██╔╝██║██╔══╝░░  ██╔══╝░░██║╚████║██║░░██║██╔══╝░░██║░░██║\r\n╚██████╔╝██║░░██║██║░╚═╝░██║███████╗  ███████╗██║░╚███║██████╔╝███████╗██████╔╝\r\n░╚═════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝╚══════╝  ╚══════╝╚═╝░░╚══╝╚═════╝░╚══════╝╚═════╝░");
         }
 
         static public string ChoosePath(string hint)
         {
-            string userChoice = Helpers.Ask("Of druk 'x' om te stoppen. Maak een keuze om door te gaan: ");
+            string userChoice = Helpers.Ask("Indien je een hint wilt druk '4', om je doel te zien druk '5', om te stoppen druk 'x'. Maak een keuze om door te gaan: ");
             switch (userChoice)
             {
                 case "1":
@@ -71,14 +71,17 @@ namespace E1_Adventure_Game
                 case "4":
                     if (hint == "")
                     {
-                        Console.WriteLine("Er is momenteel geen hint beschikbaar!");
+                        Console.WriteLine("Er is momenteel geen hint beschikbaar!\n");
                     } else if (hint == "Geen hint beschikbaar")
                     {
-                        Console.WriteLine("Er is momenteel geen hint beschikbaar!");
+                        Console.WriteLine("Er is momenteel geen hint beschikbaar!\n");
                     } else
                     {
                         Console.WriteLine($"Je hint: {hint}\n");
                     }
+                    return ChoosePath(hint);
+                case "5":
+                    Console.WriteLine("Je doel is om de backrooms te ontsnappen!\n");
                     return ChoosePath(hint);
                 case "x":
                     return "";
