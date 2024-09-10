@@ -7,3 +7,4 @@ Je ziet een zwarte pijl in een bepaalde richting
 Je volgt de pijl
 Je blijft op je plek en wacht tot iemand je vind.
 Je gaat in de andere richting dan de pijl
+End: no

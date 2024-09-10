@@ -19,8 +19,14 @@ namespace AdventureGame
                 while (game.IsRunning)
                 {
                     i++;
-                    string path = Helpers.ChoosePath(game);
-                    string newScene = i.ToString() + path;
+                    string path;
+                    string newScene = "";
+                    if (game.IsRunning == true)
+                    {
+                        path = Helpers.ChoosePath();
+                        newScene = i.ToString() + path;
+                    }
+                    
                     Console.Clear();
                     SceneLoader.DisplayScene(newScene, game);
 
